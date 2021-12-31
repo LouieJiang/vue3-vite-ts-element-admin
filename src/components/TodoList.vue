@@ -24,13 +24,23 @@
     </transition>
   </div>
 </template>
+
 <script setup lang='ts'>
 import { watchEffect, computed, ref } from 'vue'
-import {useUserStoreWithOut} from "../store/modules/user"
+import { useUserStoreWithOut } from "../store/modules/user"
 console.log("useUserStore",useUserStoreWithOut());
 const useUserStore = useUserStoreWithOut()
 useUserStore.setToken('123')
 console.log("useUserStore",useUserStore.token);
+
+// 计算属性
+// setInterval(()=>{
+//   const token =  useUserStore.token
+//   useUserStore.setToken(token + '1')
+//   console.log("token",token);
+// },1000)
+
+
 
 interface Todo {
   title: string,
